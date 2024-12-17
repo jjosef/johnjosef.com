@@ -1,0 +1,1 @@
+Welcome to my personal website repo. It is intended as an experimental space for small projects. It is also a space to reflect opinions and thoughts on technology today.
