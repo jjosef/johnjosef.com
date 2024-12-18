@@ -1,7 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+/// <reference types="vitest" />
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+import path from 'path';
+import { defineConfig, UserConfigExport } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
+
+export const ViteConfig: UserConfigExport = {
+  plugins: [TanStackRouterVite(), react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+};
+
+export default defineConfig(ViteConfig);
