@@ -7,11 +7,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "${var.domain_name}-tfstore"
-    key            = "tfstate"
-    region         = var.aws_region
   }
 }
 
 # TODO:
 # s3 bucket and upload dist folder contents, s3 bucket website config, route53 zone and record
+
+module "dir" {
+  source  = "hashicorp/dir/template"
+  version = "1.0.2"
+  base_dir = abspath("${path.module}/../dist")
+}

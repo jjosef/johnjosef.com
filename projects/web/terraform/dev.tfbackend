@@ -1,0 +1,3 @@
+bucket = "johnjosef.com-tfstore"
+key    = "tfstate"
+region = "us-east-1"
