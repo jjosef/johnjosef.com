@@ -23,6 +23,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      'jsx-child-element-spacing': 0,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
