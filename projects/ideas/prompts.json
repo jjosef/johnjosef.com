@@ -1,0 +1,178 @@
+[
+  { "category": "cooking", "prompt": "Make a simple 3-ingredient sandwich." },
+  {
+    "category": "cooking",
+    "prompt": "Prepare a fruit salad using whatever fruits you have."
+  },
+  {
+    "category": "cooking",
+    "prompt": "Bake a batch of cookies using a premade dough."
+  },
+  {
+    "category": "cooking",
+    "prompt": "Make a quick pasta dish with whatever you have on hand."
+  },
+  {
+    "category": "cooking",
+    "prompt": "Create a homemade lemonade or iced tea."
+  },
+
+  { "category": "writing", "prompt": "Write a haiku about your day." },
+  {
+    "category": "writing",
+    "prompt": "Describe your favorite place in exactly 100 words."
+  },
+  {
+    "category": "writing",
+    "prompt": "Write a short story using only dialogue."
+  },
+  { "category": "writing", "prompt": "Compose a letter to your future self." },
+  {
+    "category": "writing",
+    "prompt": "Write a poem inspired by the last song you listened to."
+  },
+
+  {
+    "category": "photography",
+    "prompt": "Take a photo that represents 'happiness' to you."
+  },
+  {
+    "category": "photography",
+    "prompt": "Capture five different textures in your home."
+  },
+  {
+    "category": "photography",
+    "prompt": "Photograph something from an unusual angle."
+  },
+  {
+    "category": "photography",
+    "prompt": "Take a black and white photo of something colorful."
+  },
+  {
+    "category": "photography",
+    "prompt": "Document your morning routine in 5 photos."
+  },
+
+  {
+    "category": "drawing",
+    "prompt": "Sketch a self-portrait without looking at the paper."
+  },
+  {
+    "category": "drawing",
+    "prompt": "Draw something using only straight lines."
+  },
+  {
+    "category": "drawing",
+    "prompt": "Create a doodle representing how you feel today."
+  },
+  {
+    "category": "drawing",
+    "prompt": "Illustrate your favorite animal in 10 minutes."
+  },
+  {
+    "category": "drawing",
+    "prompt": "Draw a scene from your favorite movie or book."
+  },
+
+  {
+    "category": "programming",
+    "prompt": "Write a program that prints all numbers from 1 to 100."
+  },
+  {
+    "category": "programming",
+    "prompt": "Create a simple 'Hello, World!' program in a new language."
+  },
+  {
+    "category": "programming",
+    "prompt": "Make a basic calculator that can add two numbers."
+  },
+  {
+    "category": "programming",
+    "prompt": "Write a script that reverses a string."
+  },
+  {
+    "category": "programming",
+    "prompt": "Build a function that checks if a number is even or odd."
+  },
+
+  {
+    "category": "exercise",
+    "prompt": "Do a quick 5-minute stretching routine."
+  },
+  {
+    "category": "exercise",
+    "prompt": "Try a 10-minute guided meditation or breathing exercise."
+  },
+  {
+    "category": "exercise",
+    "prompt": "Take a brisk 20-minute walk around your neighborhood."
+  },
+  {
+    "category": "exercise",
+    "prompt": "Do 3 sets of 10 push-ups with short breaks in between."
+  },
+  {
+    "category": "exercise",
+    "prompt": "Follow a 15-minute online dance workout."
+  },
+
+  {
+    "category": "music",
+    "prompt": "Listen to and analyze the lyrics of a song you like."
+  },
+  {
+    "category": "music",
+    "prompt": "Try to learn the chorus of a new song on an instrument."
+  },
+  {
+    "category": "music",
+    "prompt": "Create a playlist of 5 songs that lift your mood."
+  },
+  { "category": "music", "prompt": "Whistle or hum a melody and record it." },
+  {
+    "category": "music",
+    "prompt": "Explore a genre of music you usually don’t listen to."
+  },
+
+  {
+    "category": "random",
+    "prompt": "Organize your desktop or phone home screen."
+  },
+  {
+    "category": "random",
+    "prompt": "Start a jigsaw puzzle and complete one section."
+  },
+  {
+    "category": "random",
+    "prompt": "Watch a TED talk on a topic you've never explored."
+  },
+  {
+    "category": "random",
+    "prompt": "Research a fun fact about a country you've never visited."
+  },
+  {
+    "category": "random",
+    "prompt": "Write down 5 things you are grateful for today."
+  },
+
+  {
+    "category": "random",
+    "prompt": "Try a new origami design using online instructions."
+  },
+  {
+    "category": "random",
+    "prompt": "Set a timer for 5 minutes and brainstorm ideas for a new hobby."
+  },
+  {
+    "category": "random",
+    "prompt": "Clean and organize one drawer or shelf in your home."
+  },
+  {
+    "category": "random",
+    "prompt": "Find a new podcast and listen to the first 10 minutes."
+  },
+  {
+    "category": "random",
+    "prompt": "Sketch a quick map of an imaginary place."
+  }
+]
