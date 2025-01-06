@@ -17,7 +17,7 @@ export const statuses = [
   'in the hot tub',
   'watching a streaming service',
   'getting assaulted at Food Lion',
-  "hanging out at Bart's",
+  "hanging out at Bart\\'s",
   'listening to music',
   'coding',
   'working on this website',
