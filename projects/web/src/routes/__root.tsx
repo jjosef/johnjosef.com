@@ -6,7 +6,7 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <div className="bg-slate-800 text-slate-200 w-screen h-screen flex justify-center">
-        <div className="container py-2">
+        <div className="container py-2 flex flex-col justify-between">
           <Header />
           <Body />
           <Footer />

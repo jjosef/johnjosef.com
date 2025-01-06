@@ -25,6 +25,7 @@ public class UsersController : ControllerBase
     if (!isEmpty)
     {
       // Return a 404 if we've already populated the first user.
+      // Slightly hacky, but sufficient for a small project.
       return NotFound();
     }
     var firstUser = new User()

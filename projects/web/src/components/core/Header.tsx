@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import CodingImg from '../assets/coding-white.png';
+import CodingImg from '@/assets/coding-white.png';
 
 export const Header = () => {
   return (
@@ -8,12 +8,11 @@ export const Header = () => {
         <Link to="/">
           <img
             src={CodingImg}
-            alt="I generated this with AI because I'm lazy"
+            alt="I generated this with AI"
             width="50"
             height="50"
           />
         </Link>
-        <h1 className="mx-4 font-mono text-lg">John Josef</h1>
       </div>
     </header>
   );
