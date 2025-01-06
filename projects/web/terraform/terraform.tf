@@ -97,6 +97,22 @@ resource "aws_s3_object" "website_files" {
   etag = each.value.digests.md5
 }
 
+resource "aws_route53_record" "website" {
+  zone_id = aws_route53_zone.main.zone_id
+  name    = var.domain_name
+  type    = "A"
+
+  alias {
+    name                   = aws_s3_bucket_website_configuration.website_configuration.website_domain
+    zone_id                = aws_s3_bucket.website_bucket.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_zone" "main" {
+  name = var.domain_name
+}
+
 output "website_url" {
   value = aws_s3_bucket_website_configuration.website_configuration.website_endpoint
 }
