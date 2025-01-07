@@ -8,7 +8,7 @@ export const SideBar = () => {
         <p className="py-4">Learn more about me:</p>
         <ul className="list-disc list-inside">
           <li>
-            <Link href="https://linkedin.com/m/johnmjosef">LinkedIn</Link>
+            <Link href="https://linkedin.com/in/johnmjosef">LinkedIn</Link>
           </li>
           <li>
             <Link href="https://github.com/jjosef">Github</Link>
