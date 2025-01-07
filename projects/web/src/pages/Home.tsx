@@ -1,9 +1,9 @@
 import { SideBar } from '@/components';
-import { getRandomStatus, statuses } from '@/lib/statuses';
+import { getRandomStatus } from '@/lib/statuses';
 import { useEffect, useState } from 'react';
 
 export const Home = () => {
-  const [status, setStatus] = useState(statuses[0]);
+  const [status, setStatus] = useState(getRandomStatus());
 
   useEffect(() => {
     const iid = setInterval(() => setStatus(getRandomStatus()), 2000);

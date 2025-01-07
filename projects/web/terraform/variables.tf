@@ -9,5 +9,5 @@ variable "domain_name" {
 
 variable "s3_bucket_name" {
   type    = string
-  default = "johnjosef.com"
+  default = "johnjosefcom"
 }
