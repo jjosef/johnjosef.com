@@ -21,7 +21,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./projects/web
