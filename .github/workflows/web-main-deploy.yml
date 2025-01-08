@@ -1,0 +1,79 @@
+name: Deploy to AWS with Terraform
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "projects/web/**"
+      - ".github/workflows/web-main-deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  PROJECT_NAME: "web"
+
+jobs:
+  build:
+    runs-on: ubunto-latest
+    defaults:
+      run:
+        working-directory: ./projects/web
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: ">=22.12.0"
+          cache: "npm"
+      - name: Install deps
+        run: npm ci
+      - name: Build ${{ env.PROJECT_NAME }}
+        run: npm run build
+      # Could easily split out builds and deploys using this strategy
+      - name: Save build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PROJECT_NAME }}-build-${{ github.SHA }}
+          path: ./projects/web/dist
+          retention-days: 1
+
+  terraform:
+    needs: build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./projects/web/terraform
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.10.3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::288892511071:role/GithubJohnJosef.Com
+
+      - name: Retrieve build
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.PROJECT_NAME }}-build-${{ github.SHA }}
+          path: ./projects/web/dist
+
+      - name: Terraform Init
+        run: terraform init -backend-config=dev.tfbackend
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
