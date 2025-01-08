@@ -1,6 +1,6 @@
 import { LinkElementProps } from '@/types';
 import { Link as TSLink } from '@tanstack/react-router';
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 export const Link = ({ children, className, ...props }: LinkElementProps) => {
   const cns = classNames('underline', 'hover:text-slate-400', className);

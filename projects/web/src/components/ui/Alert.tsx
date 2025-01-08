@@ -1,5 +1,5 @@
 import { DivElementProps } from '@/types';
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 export const Alert = ({ children, className, ...props }: DivElementProps) => {
   return (
