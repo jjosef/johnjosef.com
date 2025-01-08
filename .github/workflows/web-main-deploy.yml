@@ -63,8 +63,9 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
+          audience: sts.amazonaws.com
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::288892511071:role/GithubJohnJosef.Com
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
 
       - name: Retrieve build
         uses: actions/download-artifact@v4
