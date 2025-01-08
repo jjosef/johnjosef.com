@@ -1,4 +1,4 @@
-import { Link, SideBar } from '@/components';
+import { SideBar } from '@/components';
 import { getRandomStatus } from '@/lib/statuses';
 import { useEffect, useState } from 'react';
 
