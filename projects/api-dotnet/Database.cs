@@ -7,8 +7,8 @@ namespace JJosefDB.Context;
 
 public class JJosefDBContext : DbContext
 {
-  public DbSet<User> Users { get; init; }
-  public DbSet<Article> Articles { get; init; }
+  public DbSet<User> Users { get; set; }
+  public DbSet<Topic> Topics { get; set; }
 
   public static JJosefDBContext Create(IMongoDatabase database) =>
     new(
@@ -18,11 +18,15 @@ public class JJosefDBContext : DbContext
     );
 
   public JJosefDBContext(DbContextOptions options)
-    : base(options) { }
+    : base(options)
+  {
+    this.Users = Set<User>();
+    this.Topics = Set<Topic>();
+  }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     modelBuilder.Entity<User>().ToCollection("users").HasIndex(u => u.Username).IsUnique();
-    modelBuilder.Entity<Article>().ToCollection("articles");
+    modelBuilder.Entity<Topic>().ToCollection("topics");
   }
 }

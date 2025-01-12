@@ -4,12 +4,12 @@ namespace JJosefDB.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ArticlesController : ControllerBase
+public class TopicsController : ControllerBase
 {
   [HttpGet]
   [ProducesResponseType(StatusCodes.Status200OK)]
   [ProducesResponseType(StatusCodes.Status400BadRequest)]
-  public async Task<IActionResult> Default()
+  public IActionResult Default()
   {
     return Ok("TODO");
   }
