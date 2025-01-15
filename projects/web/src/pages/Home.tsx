@@ -16,10 +16,10 @@ export const Home = () => {
   };
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-col md:flex-row">
       <div className="flex-grow">
-        <div className="p-2">
-          <code>
+        <div className="p-2 w-100">
+          <code className="block bg-slate-900 p-4">
             const john = '<code className="text-green-500">{status}</code>';
           </code>
           <div className="my-2">

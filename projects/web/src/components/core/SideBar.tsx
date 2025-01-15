@@ -2,10 +2,10 @@ import { Alert, Heading, Link } from '@/components';
 
 export const SideBar = () => {
   return (
-    <div className="w-0 md:w-80 overflow-hidden">
-      <div className="p-2">
+    <div className="w-100 md:w-80 p-2">
+      <div className="px-2">
         <Heading>I love technology</Heading>
-        <p className="py-4">Learn more about me:</p>
+        <p className="pb-4">Learn more about me:</p>
         <ul className="list-disc list-inside">
           <li>
             <Link href="https://linkedin.com/in/johnmjosef">LinkedIn</Link>
