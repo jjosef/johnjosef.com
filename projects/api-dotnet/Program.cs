@@ -26,6 +26,8 @@ internal static class Program
       optionsBuilder.UseMongoDB(connectionString: connectionString, databaseName: dbName)
     );
 
+    builder.Services.AddTransient<AuthenticationMiddleware>();
+
     builder.Services.AddControllers();
 
     builder.Services.AddOpenApi();
@@ -33,6 +35,8 @@ internal static class Program
     builder.Services.ResolveDependencies();
 
     var app = builder.Build();
+
+    app.UseMiddleware<AuthenticationMiddleware>();
 
     app.MapOpenApi();
 
