@@ -12,11 +12,6 @@ const projects = [
     description: 'A simple framework for building apps that can do anything.',
   },
   {
-    name: 'grtzplz',
-    href: 'https://github.com/bubltec/grtzplz',
-    description: 'The grtzplz.com repo.',
-  },
-  {
     name: 'greed',
     href: 'https://github.com/bubltec/greed',
     description: 'GREED',
@@ -25,10 +20,6 @@ const projects = [
     name: 'dotio',
     href: 'https://github.com/bubltec/dotio',
     description: 'The bubbletech.io website.',
-  },
-  {
-    name: 'political-sloth',
-    href: 'https://github.com/bubltec/political-sloth',
   },
   {
     name: 'switchboard-mcp',
