@@ -14,9 +14,6 @@ export const SideBar = () => {
             <Link href="https://github.com/jjosef">Github</Link>
           </li>
           <li>
-            <Link href="https://github.com/bubltec">bubltec</Link>
-          </li>
-          <li>
             <Link href="https://bubbletech.io">bubbletech.io</Link>
           </li>
           <li>
