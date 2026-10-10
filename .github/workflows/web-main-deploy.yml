@@ -27,19 +27,21 @@ jobs:
         working-directory: ./projects/web
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup NodeJS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: ">=22.12.0"
+          node-version: ">=22.13.0"
           cache: "npm"
+          cache-dependency-path: package-lock.json
       - name: Install deps
+        working-directory: .
         run: npm ci
       - name: Build ${{ env.PROJECT_NAME }}
         run: npm run build
       # Could easily split out builds and deploys using this strategy
       - name: Save build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.PROJECT_NAME }}-build-${{ github.SHA }}
           path: ./projects/web/dist
@@ -53,22 +55,22 @@ jobs:
         working-directory: ./projects/web/terraform
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
         with:
-          terraform_version: 1.10.3
+          terraform_version: 1.16.5
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           audience: sts.amazonaws.com
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
 
       - name: Retrieve build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: ${{ env.PROJECT_NAME }}-build-${{ github.SHA }}
           path: ./projects/web/dist

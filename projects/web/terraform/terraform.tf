@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.82.2"
+      version = "6.68.0"
     }
   }
 
@@ -184,6 +184,14 @@ resource "aws_route53_record" "website" {
   depends_on = [
     aws_cloudfront_distribution.distribution
   ]
+}
+
+resource "aws_route53_record" "google_site_verification" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = var.domain_name
+  type    = "TXT"
+  ttl     = 300
+  records = ["google-site-verification=3SRcVeuXTS1N948cb02srmM7YvISvhsqeJz1Ae8eCso"]
 }
 
 resource "aws_route53_record" "website-www" {
