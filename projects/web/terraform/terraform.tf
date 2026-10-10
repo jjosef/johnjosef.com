@@ -114,6 +114,22 @@ resource "aws_cloudfront_distribution" "distribution" {
   enabled = true
   default_root_object = "index.html"
 
+  # Direct loads of client routes such as /projects miss in S3 and come back
+  # as 403. Serve the app shell so the router can handle the path.
+  custom_error_response {
+    error_code            = 403
+    response_code         = 200
+    response_page_path    = "/index.html"
+    error_caching_min_ttl = 0
+  }
+
+  custom_error_response {
+    error_code            = 404
+    response_code         = 200
+    response_page_path    = "/index.html"
+    error_caching_min_ttl = 0
+  }
+
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
