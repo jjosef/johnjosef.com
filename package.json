@@ -11,8 +11,5 @@
   "workspaces": [
     "projects/api",
     "projects/web"
-  ],
-  "overrides": {
-    "vite": "^8.3.4"
-  }
+  ]
 }
