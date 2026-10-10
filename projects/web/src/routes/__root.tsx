@@ -2,14 +2,13 @@ import { createRootRoute } from '@tanstack/react-router';
 import { Body, Footer, Header } from '@/components';
 import React from 'react';
 
-const TanStackRouterDevtools =
-  process.env.NODE_ENV === 'production'
-    ? () => null
-    : React.lazy(() =>
-        import('@tanstack/router-devtools').then((res) => ({
-          default: res.TanStackRouterDevtools,
-        }))
-      );
+const TanStackRouterDevtools = import.meta.env.PROD
+  ? () => null
+  : React.lazy(() =>
+      import('@tanstack/react-router-devtools').then((res) => ({
+        default: res.TanStackRouterDevtools,
+      }))
+    );
 
 export const Route = createRootRoute({
   component: () => (

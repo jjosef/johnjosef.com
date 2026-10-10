@@ -1,17 +1,18 @@
-/// <reference types="vitest" />
-
-import path from 'path';
-import { defineConfig, UserConfigExport } from 'vite';
+import path from 'node:path';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
+import tailwindcss from '@tailwindcss/vite';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
 
-export const ViteConfig: UserConfigExport = {
-  plugins: [TanStackRouterVite(), react()],
+export default defineConfig({
+  plugins: [
+    tanstackRouter({ target: 'react' }),
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
-};
-
-export default defineConfig(ViteConfig);
+});
