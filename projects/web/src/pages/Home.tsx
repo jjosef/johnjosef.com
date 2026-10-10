@@ -15,7 +15,7 @@ export const Home = () => {
   };
 
   return (
-    <div className="p-2 w-100">
+    <div className="p-2 min-w-[320px]">
       <code className="block bg-slate-900 p-4">
         const john = '<code className="text-green-500">{status}</code>';
       </code>
